@@ -1,12 +1,13 @@
-# Polymarket 加密涨跌市场数据 · 完整版 · 免费样本
+# Polymarket Crypto Up/Down Market Data — Full Edition · Free Sample
 
-Polymarket 加密 Up/Down 市场数据完整版的**免费样本**：一个真实、未经修改的 UTC 日（2026-09-08），
-目录结构与正式交付的数据完全一致，针对样本写的代码可以原样用在正式数据上。
+[Polymarket historical data](https://outcometick.com/polymarket-historical-data) for the crypto Up/Down markets, collected 24/7 by [OutcomeTick](https://outcometick.com). This repository hosts a **free sample** of the
+full edition: one real, unmodified UTC day (2026-09-08), laid out exactly as the delivered archive, so code
+written against the sample runs unchanged on the full data.
 
-Free sample of the Polymarket crypto Up/Down market data (full edition): one real,
-unmodified UTC day (2026-09-08), laid out exactly as the delivered archive.
+> **中文：** 本仓库是 [OutcomeTick](https://outcometick.com/zh) 采集的[Polymarket 历史数据](https://outcometick.com/zh/polymarket-historical-data)（加密 Up/Down 市场）完整版的**免费样本**：一个真实、未经修改的
+> UTC 日（2026-09-08），目录结构与正式交付的数据完全一致，针对样本写的代码可以原样用在正式数据上。
 
-## 下载 / Download
+## Download / 下载
 
 **[polymarket-data-samples.tar.gz](https://github.com/outcometick/polymarket-data-samples/releases/latest/download/polymarket-data-samples.tar.gz)**
 
@@ -14,10 +15,21 @@ unmodified UTC day (2026-09-08), laid out exactly as the delivered archive.
 curl -L https://github.com/outcometick/polymarket-data-samples/releases/latest/download/polymarket-data-samples.tar.gz | tar xz
 ```
 
-每个文件的行数与 sha256 见 [`samples/manifest.json`](samples/manifest.json)；字段说明见
-[数据使用说明.md](数据使用说明.md)（English: [DATA_GUIDE.md](DATA_GUIDE.md)）。
+Per-file row counts and sha256: [`samples/manifest.json`](samples/manifest.json).
+Field reference: [DATA_GUIDE.md](DATA_GUIDE.md) · 中文字段说明：[数据使用说明.md](数据使用说明.md)
 
-## 样本包含的文件 / Files in this sample
+## What the full edition contains / 完整版包含的数据
+
+- **[Order book](https://outcometick.com/polymarket-order-book-data)** — full-depth snapshots, incremental updates, and best bid/ask
+- **Trades** — price, size, side, millisecond timestamp, on-chain tx hash
+- **Markets** — the opening price (price to beat), the settled outcome, each market's own TWAP settlement config
+- **[Chainlink settlement streams](https://outcometick.com/chainlink-settlement-data)** — instantaneous, TWAP30s and TWAP60s
+- **Klines** — OHLC built from the settlement stream, 1 second to 1 month
+- Seven assets, 5-minute and 15-minute markets
+
+> **中文：** 盘口快照 + 增量 + 最优价、逐笔成交、市场信息（开盘价、结算结果、TWAP 结算配置）、Chainlink 瞬时 / TWAP30s / TWAP60s 结算流、K 线；7 个币种、5 分钟 / 15 分钟市场。
+
+## Files in this sample / 样本包含的文件
 
 | path | rows |
 |---|---|
@@ -30,8 +42,15 @@ curl -L https://github.com/outcometick/polymarket-data-samples/releases/latest/d
 | `data/polymarket/daily/best_bid_ask/BTC-5m/BTC-5m-best_bid_ask-2026-09-08.jsonl.gz` | 1,314,078 |
 | `data/polymarket/daily/last_trade_price/BTC-5m/BTC-5m-last_trade_price-2026-09-08.jsonl.gz` | 480,491 |
 
-## 正式数据 / Full data
+## Learn more / 了解更多
 
-正式数据通过 API key 交付，按天、按币种、按周期下载。接口文档：https://outcometick.com/docs
+- [OutcomeTick](https://outcometick.com) — prediction-market data for Polymarket and Predict.fun · [中文站](https://outcometick.com/zh)
+- [Documentation](https://outcometick.com/docs) — quickstart and complete task examples · [中文文档](https://outcometick.com/zh/docs)
+- [API reference](https://outcometick.com/docs/api) · [Data schemas](https://outcometick.com/docs/schemas) · [Settlement rules](https://outcometick.com/docs/settlement)
+- [Settlement statistics for BTC](https://outcometick.com/data/polymarket/btc) — per-asset data page
+- [Backtest in the browser](https://outcometick.com/backtest) — run a strategy on the archive without downloading anything
 
-仅供研究 / 回测，不构成投资建议。
+The full data is delivered with an API key and downloaded by day, asset and interval.
+正式数据通过 API key 交付，按天、按币种、按周期下载。
+
+For research and backtesting only; not investment advice. / 仅供研究与回测，不构成投资建议。
