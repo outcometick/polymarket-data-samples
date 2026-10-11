@@ -49,6 +49,7 @@ Field reference: [DATA_GUIDE.md](DATA_GUIDE.md) · 中文字段说明：[数据�
 - [API reference](https://outcometick.com/docs/api) · [Data schemas](https://outcometick.com/docs/schemas) · [Settlement rules](https://outcometick.com/docs/settlement)
 - [Settlement statistics for BTC](https://outcometick.com/data/polymarket/btc) — per-asset data page
 - [Backtest in the browser](https://outcometick.com/backtest) — run a strategy on the archive without downloading anything
+- Community / 社区: [Discord](https://discord.gg/ZDMqkptwm5) (English and 中文) · [Telegram](https://t.me/+TcK_hJOzOz5mZTk1)
 
 The full data is delivered with an API key and downloaded by day, asset and interval.
 正式数据通过 API key 交付，按天、按币种、按周期下载。
